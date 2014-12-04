@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head lang="hr">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<title>OS2 Projekt</title>
+
+
+	<!-- Include our stylesheet -->
+	<link href="assets/css/styles.css" rel="stylesheet"/>
+
+</head>
+<body>
+
+	<h1>OS2 Projekt</h1>
+	<h3>Matej Bašić</h3>
+	<!-- interface -->
+	<div class="cryptContainer">
+		<button id="generateTxtBtn">Lorem Ipsum</button>
+		<button id="newTxtBtn">Novo</button>
+		<button id="savePlainBtn">Spremi</button>
+		
+		<input type="text" id="fileName">
+		<input type="hidden" id="filePath">
+		
+		<textarea rows="8" cols="80" id="txtPlain"></textarea>
+		
+	
+		<div class="cryptCtrls">
+			<button id="generateKeysBtn">Generiraj ključeve</button>
+			
+			<button id="asymetricCryptBtn">Kriptiranje(RSA)</button>
+			<button id="asymetricDecryptBtn">Dekriptiranje(RSA)</button>
+			
+			<button id="symetricCryptBtn">Kriptiranje(AES)</button>
+			<button id="symetricDecryptBtn">Dekriptiranje(AES)</button>
+			
+			<button id="digestBtn">Sažetak</button>
+			<button id="digitalSignatureBtn">Digitalni potpis</button>
+			<button id="digitalSignatureCheckBtn">Provjera digitalnog potpisa</button>
+		</div>
+	
+	</div>
+	<div class="filemanager">
+
+		<div class="search">
+			<input type="search" placeholder="Pronađi..." />
+		</div>
+
+		<div class="breadcrumbs"></div>
+
+		<ul class="data"></ul>
+
+		<div class="nothingfound">
+			<div class="nofiles"></div>
+			<span>Nema datoteka.</span>
+		</div>
+
+	</div>
+
+
+	<!-- Include our script files -->
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="assets/js/script.js"></script>
+	
+	<script>
+		$(document).ready(function(){
+			
+			
+			
+		});
+	</script>
+</body>
+</html>
