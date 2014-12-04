@@ -13,16 +13,21 @@
 	$data = file_get_contents($data_location);
 	$data_items = explode("-+-", $data);
 	
-	$org_msg = $data_items[0];
+	$org_data_path = str_replace("_signed", "", $path);
+	
+	
+	$org_data = file_get_contents($org_data_path);
+	$org_data_signed = $data_items[0];
 	
 	
 	$public_key_location = getenv("DOCUMENT_ROOT") . "/files/kljucevi/javni_kljuc.txt";
 	$public_key = file_get_contents($public_key_location);
 	$rsa->loadKey($public_key);
 	$decrypted_digest = $rsa->decrypt($data_items[1]);
-	$temp_digest = sha1($org_msg);
+	$org_digest = sha1($org_data);
+	$org_signed_digest = sha1($org_data_signed);
 	
-	if ($decrypted_digest == $temp_digest) {
+	if ($decrypted_digest == $org_digest && $decrypted_digest == $org_signed_digest) {
 		echo "valid";
 	}
 	else {
