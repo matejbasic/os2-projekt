@@ -14,24 +14,24 @@
 	//print_r($secretkey);
 	
 	
-	$dir = "files/kljucevi";
-	if ( !file_exists($dir) ) {
+	$keys_dir = "datoteke/kljucevi";
+	if ( !file_exists($keys_dir) ) {
 		$old_mask = umask(0);
-		mkdir($dir, 0777);
+		mkdir($keys_dir, 0777);
 		umask($old_mask);
 	}
 	else {
-		chmod($dir, 0777);
+		chmod($keys_dir, 0777);
 	}
 	
-	$file_location = getenv("DOCUMENT_ROOT") . "/" . $dir . "/javni_kljuc.txt";
+	$file_location = getenv("DOCUMENT_ROOT") . "/" . $keys_dir . "/javni_kljuc.txt";
 	file_put_contents($file_location, $publickey);
 	
 	
-	$file_location = getenv("DOCUMENT_ROOT") . "/" . $dir . "/privatni_kljuc.txt";
+	$file_location = getenv("DOCUMENT_ROOT") . "/" . $keys_dir . "/privatni_kljuc.txt";
 	file_put_contents($file_location, $privatekey);
 	
-	$file_location = getenv("DOCUMENT_ROOT") . "/" . $dir . "/tajni_kljuc.txt";
+	$file_location = getenv("DOCUMENT_ROOT") . "/" . $keys_dir . "/tajni_kljuc.txt";
 	file_put_contents($file_location, $secretkey);
 	
 	echo "generated";

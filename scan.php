@@ -1,6 +1,6 @@
 <?php
 
-$dir = "files";
+$dir = "datoteke";
 
 // Run the recursive function 
 
@@ -64,7 +64,7 @@ function scan($dir){
 header('Content-type: application/json');
 
 echo json_encode(array(
-	"name" => "files",
+	"name" => "datoteke",
 	"type" => "folder",
 	"path" => $dir,
 	"items" => $response

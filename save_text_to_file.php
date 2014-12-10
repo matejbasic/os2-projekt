@@ -20,10 +20,11 @@
 	}
 	//print_r($_POST);
 	
-	$file_name = "files";
-	chmod($file_name, 0777);
+	$dir = "datoteke";
+	chmod($dir, 0777);
 	
 	$file_location = getenv("DOCUMENT_ROOT") . "/" . $path;
+	chmod($file_location, 0777);
 	file_put_contents($file_location, $txt);
-	
+	return "saved"
 ?>

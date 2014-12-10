@@ -15,33 +15,12 @@
 
 	<h1>OS2 Projekt</h1>
 	<h3>Matej Bašić</h3>
-	<!-- interface -->
-	<div class="cryptContainer">
-		<button id="generateTxtBtn">Lorem Ipsum</button>
-		<button id="newTxtBtn">Novo</button>
-		<button id="savePlainBtn">Spremi</button>
-		
-		<input type="text" id="fileName">
-		<input type="hidden" id="filePath">
-		
-		<textarea rows="8" cols="80" id="txtPlain"></textarea>
-		
-	
-		<div class="cryptCtrls">
-			<button id="generateKeysBtn">Generiraj ključeve</button>
-			
-			<button id="asymetricCryptBtn">Kriptiranje(RSA)</button>
-			<button id="asymetricDecryptBtn">Dekriptiranje(RSA)</button>
-			
-			<button id="symetricCryptBtn">Kriptiranje(AES)</button>
-			<button id="symetricDecryptBtn">Dekriptiranje(AES)</button>
-			
-			<button id="digestBtn">Sažetak</button>
-			<button id="digitalSignatureBtn">Digitalni potpis</button>
-			<button id="digitalSignatureCheckBtn">Provjera digitalnog potpisa</button>
+	<div id="notice">
+		<div id="notice_content">
+			Odaberite datoteku!
 		</div>
-	
 	</div>
+		
 	<div class="filemanager">
 
 		<div class="search">
@@ -58,18 +37,67 @@
 		</div>
 
 	</div>
-
-
+	<!-- interface -->
+	<div class="cryptContainer">
+		<div class="cryptCtrls">
+			<button id="generateKeysBtn">Generiraj ključeve</button>
+			
+			<button id="asymetricCryptBtn">Kriptiranje(RSA)</button>
+			<button id="asymetricDecryptBtn">Dekriptiranje(RSA)</button>
+			
+			<button id="symetricCryptBtn">Kriptiranje(AES)</button>
+			<button id="symetricDecryptBtn">Dekriptiranje(AES)</button>
+			
+			<button id="digestBtn">Sažetak</button>
+			<button id="digitalSignatureBtn">Digitalni potpis</button>
+			<button id="digitalSignatureCheckBtn">Provjera digitalnog potpisa</button>
+		</div>
+		
+		<div id="toggleTextEditor" class="toggleBtn">uređivanje teksta</div>
+		<div id="textEditor">
+			<div class="txtCtrls">
+				<button id="newTxtBtn">Novo</button>
+				<button id="savePlainBtn">Spremi</button>
+			</div>
+			<input type="text" id="fileName">
+			<input type="hidden" id="filePath">
+			<button id="generateTxtBtn">Lorem Ipsum</button>
+			
+			<textarea rows="8" cols="80" id="txtPlain"></textarea>
+		</div>
+		
+		<div id="toggleFileUpload" class="toggleBtn">unos datoteka</div>
+		<div id="fileUpload">
+			<form id="upload" method="post" action="upload.php" enctype="multipart/form-data">
+				<div id="drop">
+					<a>Traži...</a>
+					<input type="file" name="upl" multiple />
+				</div>
+				<ul>
+					<!-- The file uploads will be shown here -->
+				</ul>
+			</form>
+		</div>
+	</div>
+	<footer class="main_footer">
+		<div class="project_info">
+			<a href="http://phpseclib.sourceforge.net/index.html" target="_blank">PhpSecLib</a>
+			<a href="https://github.com/matejbasic/os2-projekt" target="_blank">Source(Github)</a>
+		</div>
+	</footer>
+	<
 	<!-- Include our script files -->
 	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script src="assets/js/script.js"></script>
 	
-	<script>
-		$(document).ready(function(){
-			
-			
-			
-		});
-	</script>
+	<!-- File upload scripts -->
+	<!-- JavaScript Includes -->
+	
+	<script src="assets/js/jquery.knob.js"></script>
+
+	<!-- jQuery File Upload Dependencies -->
+	<script src="assets/js/jquery.ui.widget.js"></script>
+	<script src="assets/js/jquery.iframe-transport.js"></script>
+	<script src="assets/js/jquery.fileupload.js"></script>
 </body>
 </html>

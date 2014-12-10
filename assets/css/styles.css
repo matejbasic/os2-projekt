@@ -11,9 +11,158 @@
 }
 
 
+/*----------------------------
+    The file upload form
+-----------------------------*/
+
+
+#upload{
+    font-family:'PT Sans Narrow', sans-serif;
+    background-color: #373743;
+
+
+    width: 90%;
+    padding:30px;
+    border-radius:3px;
+
+    margin: 20px auto 100px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#drop{
+    background-color: #2E3134;
+    padding: 40px 50px;
+    margin-bottom: 30px;
+    border: 20px solid rgba(0, 0, 0, 0);
+    border-radius: 3px;
+    text-align: center;
+    text-transform: uppercase;
+
+    font-size:16px;
+    color:#7f858a;
+}
+
+#drop a{
+    background-color:#007a96;
+    padding:12px 26px;
+    color:#fff;
+    font-size:14px;
+    border-radius:2px;
+    cursor:pointer;
+    display:inline-block;
+    margin-top:12px;
+    line-height:1;
+}
+
+#drop a:hover{
+    background-color:#0986a3;
+}
+
+#drop input{
+    display:none;
+}
+
+#upload ul{
+    list-style:none;
+    border: 1px solid #2b2e31;
+}
+
+#upload ul li{
+
+    background-color:#333639;
+    
+    
+    
+
+    border-bottom:1px solid #2b2e31;
+    padding:15px;
+    height: 52px;
+
+    position: relative;
+    
+
+}
+
+#upload ul li input{
+    display: none;
+}
+
+#upload ul li p{
+    width: 144px;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #EEE;
+    font-size: 16px;
+    font-weight: bold;
+    position: absolute;
+    top: 20px;
+    left: 100px;
+}
+
+#upload ul li i{
+    font-weight: normal;
+    font-style:normal;
+    color:#7f7f7f;
+    display:block;
+}
+
+#upload ul li canvas{
+    top: 15px;
+    left: 32px;
+    position: absolute;
+}
+
+#upload ul li span{
+    width: 15px;
+    height: 12px;
+    background: url('../img/icons.png') no-repeat;
+    position: absolute;
+    top: 34px;
+    right: 33px;
+    cursor:pointer;
+}
+
+#upload ul li.working span{
+    height: 16px;
+    background-position: 0 -12px;
+}
+
+#upload ul li.error p{
+    color:red;
+}
+
 /*-------------------------
 	Page basics - Matej Basic
 -------------------------*/
+
+#notice {
+	color: white;
+	font-size: 15px;
+	position: fixed;
+	top: 0px;
+	right: 4%;
+	z-index: 9999;
+	padding: 16px 10px 12px;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+	background-color: #984444;
+	opacity: 0.9;
+}
+
+.toggleBtn {
+	font-size: 20px;
+	color: white;
+	margin: 10px 0px 10px 24px;
+}
+.toggleBtn:hover {
+	cursor: pointer;
+	color: #984444;
+}
+.deleteBtn {
+	position: absolute;
+	top: 3px;
+	right: 3px;
+}
 
 body {
 	background-color: #23232e;
@@ -42,21 +191,35 @@ button.choosed {
 button.choosed:hover {
 	background-color: rgb(205, 62, 62);
 }
+#generateTxtBtn {
+	float: right;
+}
 
+
+.txtCtrls {
+	float: left;
+}
 #txtPlain {
-	width: 100%;
+	width: 98%;
+	padding:1%;
 	height: 320px;
 	border: none;
 	font: 16px normal Arial, Helvetica, sans-serif;
 }
 #fileName {
-	height: 32px;
+	height: 30px;
 	width: 360px;
 	border: none;
 	font: 16px normal Arial, Helvetica, sans-serif;
+	margin-top:4px;
+	margin-left:4px;
+	padding:2px;
+	display: block;
+	float:left;
 }
 .cryptCtrls {
-	margin-top: 50px;
+	margin-bottom: 50px;
+	text-align: center;
 }
 
 h1, h3 {
@@ -84,7 +247,7 @@ h3 {
 	width: 92%;
 	max-width:1340px;
 	position: relative;
-	margin: 50px auto 50px;
+	margin: 50px auto 20px auto;
 }
 
 @media all and (max-width: 965px) {
@@ -104,7 +267,6 @@ h3 {
 	color: #ffffff;
 	margin-left:20px;
 	font-size: 24px;
-	font-weight: 700;
 	line-height: 35px;
 }
 
@@ -531,22 +693,16 @@ h3 {
 -----------------------------*/
 
 
-footer {
-
-	width: 770px;
-	font: normal 16px Arial, Helvetica, sans-serif;
-	padding: 15px 35px;
-	position: fixed;
-	bottom: 0;
-	left: 50%;
-	margin-left: -420px;
-
-	background-color:#1f1f1f;
-	background-image:linear-gradient(to bottom, #1f1f1f, #101010);
-
-	border-radius:2px 2px 0 0;
-	box-shadow: 0 -1px 4px rgba(0,0,0,0.4);
-	z-index:1;
+footer.main_footer {
+	color: #fff !important;
+	font-size: 16px;
+	margin-bottom: 34px;
+	margin-left: 20px;
+	text-align: center;
+	padding-top: 34px;
+}
+.main_footer a {
+	color: white !important;
 }
 
 footer a.tz{
